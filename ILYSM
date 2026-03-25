@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Heart Still Chooses You 💗🥺</title>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom, #ffc0cb, #ff9eb5, #ff6f91);
+    color: white;
+    overflow: hidden;
+  }
+
+  h1 {
+    margin-top: 70px;
+    font-size: 36px;
+  }
+
+  p {
+    font-size: 18px;
+    width: 75%;
+    margin: auto;
+    line-height: 1.8;
+  }
+
+  button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  #yesBtn {
+    background: white;
+    color: #ff4d6d;
+    margin: 15px;
+  }
+
+  #noBtn {
+    background: #ff4d6d;
+    color: white;
+    position: absolute;
+  }
+
+  #response {
+    margin-top: 20px;
+    font-size: 20px;
+  }
+
+  img {
+    width: 200px;
+    margin-top: 20px;
+    border-radius: 20px;
+  }
+
+  a {
+    color: white;
+    text-decoration: underline;
+  }
+
+  .heart {
+    position: absolute;
+    animation: float 6s linear infinite;
+  }
+
+  @keyframes float {
+    0% {transform: translateY(100vh);}
+    100% {transform: translateY(-10vh);}
+  }
+</style>
+</head>
+
+<body>
+
+<h1>My Heart Still Finds You 💗🥺</h1>
+
+<p>
+I tried to move on… but my heart said no 💭💔  
+I tried to forget… but memories won’t let go 🌙😔  
+<br><br>
+I miss you more than words can show 💞💫  
+In every high… in every low 🌸💭  
+<br><br>
+Your smile 😊 stays in my mind  
+Your voice 🎶… one of a kind 💗✨  
+<br><br>
+Maybe I wasn’t perfect… I know that’s true 😔💔  
+But everything I felt… was real for you 💘💌  
+<br><br>
+So here I am… soft and true 🥺💞  
+Still choosing me… still choosing you 💗✨  
+<br><br>
+Can we try again? 💖🌙  
+</p>
+
+<br>
+
+<button id="yesBtn" onclick="yesClicked()">Yes 💖😊</button>
+<button id="noBtn" onmouseover="moveButton()">No 😢💔</button>
+
+<div id="response"></div>
+
+<br>
+
+<p>
+🎶 <a href="https://www.youtube.com/watch?v=1nJ2b4RrK3Q" target="_blank">
+Play our song — Aje 💗🎧
+</a>
+</p>
+
+<script>
+let noCount = 0;
+
+function yesClicked() {
+  document.getElementById("response").innerHTML =
+  "You just made my heart smile again 😭💗✨<br><br>" +
+  "<img src='https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif'><br><br>" +
+  "I promise you… you won’t regret this 💖😊<br>" +
+  "I’ll love you softer, better, and realer this time 💞🌸";
+}
+
+function moveButton() {
+  let btn = document.getElementById("noBtn");
+  let x = Math.random() * (window.innerWidth - 100);
+  let y = Math.random() * (window.innerHeight - 50);
+
+  btn.style.left = x + "px";
+  btn.style.top = y + "px";
+
+  noCount++;
+
+  if (noCount === 2) {
+    document.getElementById("response").innerHTML =
+    "Are you sure? 🥺💔<br>Maybe think again… please? 💭💗";
+  } 
+  else if (noCount === 4) {
+    document.getElementById("response").innerHTML =
+    "Are you really really sure? 😔💔<br>My heart is still here waiting 💞🥺";
+  } 
+  else if (noCount > 6) {
+    document.getElementById("response").innerHTML =
+    "Don’t break my heart again… please 💔😢<br>" +
+    "That would make me so sad… so lost… 🌧️💭<br>" +
+    "and honestly… a little broken inside 😔💔";
+  }
+}
+
+// floating hearts
+for (let i = 0; i < 30; i++) {
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💗";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = Math.random() * 20 + 15 + "px";
+  heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+  document.body.appendChild(heart);
+}
+</script>
+
+</body>
+</html>
